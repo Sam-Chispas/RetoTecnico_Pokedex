@@ -1,0 +1,51 @@
+.team-wrap {
+  position: absolute;
+  top: 480px; left: 24px;
+  width: 340px;
+}
+.team-label {
+  font-family: 'Press Start 2P', monospace;
+  font-size: 7px;
+  color: #2a4a2a;
+  letter-spacing: 0.15em;
+  margin-bottom: 8px;
+}
+.team-slots {
+  display: flex;
+  gap: 6px;
+}
+.team-slot {
+  width: 48px; height: 48px;
+  border-radius: 8px;
+  border: 2px solid #1a1a1a;
+  background: #060f06;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: default;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.team-slot.filled { border-color: #1a3a1a; cursor: pointer; }
+.team-slot.filled:hover {
+  border-color: #f44;
+  box-shadow: 0 0 8px rgba(255,60,60,0.4);
+}
+.team-slot img {
+  width: 40px; height: 40px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.team-slot-empty {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  border: 2px dashed #1a3a1a;
+}
+.team-slot-dot {
+  position: absolute;
+  top: 3px; right: 3px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #D30A40;
+}

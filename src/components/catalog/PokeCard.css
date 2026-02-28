@@ -1,0 +1,75 @@
+.catalog {
+  width: 900px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+.poke-card {
+  background: #111;
+  border: 2px solid #222;
+  border-radius: 10px;
+  padding: 10px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  font-family: 'Press Start 2P', monospace;
+}
+.poke-card:hover {
+  transform: translateY(-3px);
+  border-color: #D30A40;
+  box-shadow: 0 6px 20px rgba(211,10,64,0.3);
+}
+.poke-card.selected {
+  border-color: #6bff6b;
+  box-shadow: 0 0 16px rgba(107,255,107,0.4);
+}
+.poke-card.captured::after {
+  content: '●';
+  position: absolute;
+  top: 6px; right: 8px;
+  font-size: 8px;
+  color: #D30A40;
+}
+.card-sprite {
+  width: 64px; height: 64px;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+.card-id   { font-size: 7px; color: #444; }
+.card-name { font-size: 7px; color: #ccc; text-transform: capitalize; text-align: center; }
+.card-types { display: flex; gap: 3px; flex-wrap: wrap; justify-content: center; }
+.type-badge {
+  font-size: 6px;
+  padding: 2px 6px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.capture-btn {
+  margin-top: 2px;
+  padding: 4px 8px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 6px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.capture-btn.on  { background: #D30A40; color: #fff; }
+.capture-btn.off { background: #1a1a1a; color: #f44; border: 1px solid #f44; }
+.skeleton {
+  background: linear-gradient(90deg, #111 25%, #1a1a1a 50%, #111 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s infinite;
+  border-radius: 10px;
+  height: 140px;
+}
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
