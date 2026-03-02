@@ -37,6 +37,7 @@
   z-index: 2;
   animation: tv-on 0.6s ease-out forwards;
 }
+/*Luz detras del pokemon*/
 .screen-glow {
   position: absolute;
   width: 120px; height: 120px;

@@ -9,7 +9,7 @@ export default function RightScreen({ pokemon, captured }) {
       </div>
     )
   }
-  return (
+  return ( //info completa del pokemon
     <div className="right-screen-top">
       <div className="info-name">
         {pokemon.name}

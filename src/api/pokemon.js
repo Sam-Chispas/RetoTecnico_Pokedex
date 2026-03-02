@@ -2,13 +2,13 @@ const cache = {};
 
 export async function fetchPokemon(id) {
   if (cache[id]) return cache[id];
-  const res  = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+  const res  = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`); //de aqui saco los datos (id, nombre, stands)
   const data = await res.json();
   const p = {
     id: data.id,
     name: data.name,
-    sprite: data.sprites.other?.["official-artwork"]?.front_default || data.sprites.front_default,
-    spriteSmall: data.sprites.front_default,
+    sprite: data.sprites.other?.["official-artwork"]?.front_default || data.sprites.front_default, //foto
+    spriteSmall: data.sprites.front_default, //foto pequeña
     types: data.types.map(t => t.type.name),
     stats: {
       hp:    data.stats[0].base_stat,

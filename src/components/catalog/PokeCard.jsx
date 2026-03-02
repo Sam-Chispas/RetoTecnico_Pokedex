@@ -3,13 +3,13 @@ import './PokeCard.css'
 
 export default function PokeCard({
   pokemon, selected, captured, teamFull,
-  onSelect, onCapture
+  onSelect, onCapture 
 }) {
   return (
     <div
-      className={`poke-card ${selected ? 'selected' : ''} ${captured ? 'captured' : ''}`}
+      className={`poke-card ${selected ? 'selected' : ''} ${captured ? 'captured' : ''}`} //esta seleccionado? capturado? abajo esta la carta chiquita
       onClick={() => onSelect(pokemon)}
-    >
+    > 
       <img src={pokemon.spriteSmall} alt={pokemon.name} className="card-sprite" />
       <span className="card-id">#{String(pokemon.id).padStart(3, '0')}</span>
       <span className="card-name">{pokemon.name}</span>
@@ -23,8 +23,8 @@ export default function PokeCard({
             {t}
           </span>
         ))}
-      </div>
-      <button
+      </div> 
+      <button //boton de captura, bloqueo si se llena el team
         className={`capture-btn ${captured ? 'off' : 'on'}`}
         disabled={!captured && teamFull}
         onClick={e => { e.stopPropagation(); onCapture(pokemon) }}

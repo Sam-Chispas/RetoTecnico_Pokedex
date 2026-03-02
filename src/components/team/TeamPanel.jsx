@@ -1,10 +1,10 @@
 import { TYPE_COLORS } from '../../constants/types'
 import './TeamPanel.css'
 
-export default function TeamPanel({ team, onRemove }) {
+export default function TeamPanel({ team, onRemove }) { //el team solo puede tener 6 elementos
   return (
     <div className="team-wrap">
-      <div className="team-label">&gt; EQUIPO [{team.length}/6]</div>
+      <div className="team-label">&gt; EQUIPO [{team.length}/6]</div> 
       <div className="team-slots">
         {Array.from({ length: 6 }).map((_, i) => {
           const p = team[i]
@@ -13,8 +13,6 @@ export default function TeamPanel({ team, onRemove }) {
             <div
               key={i}
               className={`team-slot ${p ? 'filled' : ''}`}
-              onClick={() => p && onRemove(p)}
-              title={p ? `Retirar a ${p.name}` : 'Vacío'}
               style={p ? { boxShadow: `inset 0 0 12px ${color}33` } : {}}
             >
               {p ? (

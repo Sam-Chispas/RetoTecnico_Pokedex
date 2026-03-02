@@ -115,7 +115,7 @@ export default function App() {
               onChange={e => setSearch(e.target.value)}
             />
           </div>
-          <TeamPanel team={team} onRemove={handleRemoveFromTeam} />
+          <TeamPanel team={team} />
         </div>
       </div>
 
