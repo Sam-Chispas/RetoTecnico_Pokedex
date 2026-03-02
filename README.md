@@ -128,18 +128,6 @@ npm run preview
 
 ---
 
-## 🗺️ Roadmap
-
-- [ ] Persistencia con `localStorage`
-- [ ] Filtro por generación (Gen I–VIII)
-- [ ] Filtro por tipo
-- [ ] Cadena evolutiva en pantalla derecha
-- [ ] Sonidos retro al capturar
-- [ ] Modo responsive / mobile
-- [ ] Pantalla de detalle expandida al hacer click en el sprite
-
----
-
 ## 📄 Licencia
 
 [MIT](LICENSE)
