@@ -11,9 +11,26 @@ export default function App() {
   const [pokemons, setPokemons] = useState([])
   const [loading, setLoading]   = useState(true)
   const [selected, setSelected] = useState(null)
-  const [captured, setCaptured] = useState([])
-  const [team, setTeam]         = useState([])
+  const [captured, setCaptured] = useState(() => {
+  try {
+    return JSON.parse(localStorage.getItem('pokedex-captured')) || []
+  } catch { return [] }
+})
+
+const [team, setTeam] = useState(() => {
+  try {
+    return JSON.parse(localStorage.getItem('pokedex-team')) || []
+  } catch { return [] }
+})
   const [search, setSearch]     = useState('')
+
+  useEffect(() => {
+  localStorage.setItem('pokedex-captured', JSON.stringify(captured))
+}, [captured])
+
+useEffect(() => {
+  localStorage.setItem('pokedex-team', JSON.stringify(team))
+}, [team])
 
   useEffect(() => {
     const ids = Array.from({ length: 151 }, (_, i) => i + 1)
@@ -50,9 +67,6 @@ export default function App() {
     })
   }, [])
 
-  const handleRemoveFromTeam = useCallback((pokemon) => {
-    setTeam(prev => prev.filter(p => p.id !== pokemon.id))
-  }, [])
 
   const isCaptured = (id) => captured.includes(id)
 
