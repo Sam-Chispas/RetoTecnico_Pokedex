@@ -15,9 +15,7 @@ Una Pokédex interactiva con diseño de consola física, construida con React + 
 
 > <img width="1919" height="883" alt="image" src="https://github.com/user-attachments/assets/052aa6bb-d1fd-46bf-8d16-0d2ff821513d" />
 
-
-```
-<img width="1919" height="882" alt="image" src="https://github.com/user-attachments/assets/b8209111-cf76-45af-b256-629120d3df8b" />
+> <img width="1919" height="882" alt="image" src="https://github.com/user-attachments/assets/b8209111-cf76-45af-b256-629120d3df8b" />
 
 ```
 
